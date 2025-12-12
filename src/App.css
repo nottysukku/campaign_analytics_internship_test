@@ -7,6 +7,109 @@
   gap: 18px;
 }
 
+/* ============ ANIMATIONS ============ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes pulsSubtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.5s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulsSubtle 3s ease-in-out infinite;
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* ============ PAGE HEADER ============ */
+
 .page__header {
   display: flex;
   align-items: flex-end;
@@ -54,6 +157,22 @@ h1 {
   color: #0f172a;
 }
 
+.filter__select--animated {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0);
+}
+
+.filter__select--animated:hover {
+  border-color: #94a3b8;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.filter__select--animated:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
 .summary {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -66,6 +185,13 @@ h1 {
   border-radius: 10px;
   padding: 14px 16px;
   box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.summary__tile:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+  transform: translateY(-2px);
 }
 
 .summary__label {
@@ -127,6 +253,15 @@ h1 {
   color: #0f172a;
 }
 
+.table__row {
+  transition: all 0.2s ease-out;
+}
+
+.table__row:hover {
+  background-color: #f8fafc;
+  transform: scale(1.01);
+}
+
 .campaign-name {
   font-weight: 600;
 }
@@ -145,12 +280,17 @@ h1 {
   font-size: 12px;
   font-weight: 600;
   border: 1px solid transparent;
+  transition: all 0.3s ease;
 }
 
 .badge--success {
   background: #ecfdf3;
   color: #166534;
   border-color: #bbf7d0;
+}
+
+.badge--success:hover {
+  box-shadow: 0 0 12px rgba(22, 101, 52, 0.2);
 }
 
 .badge--muted {
@@ -163,6 +303,10 @@ h1 {
   background: #fef2f2;
   color: #b91c1c;
   border-color: #fecdd3;
+}
+
+.badge--error:hover {
+  box-shadow: 0 0 12px rgba(185, 28, 28, 0.2);
 }
 
 .empty-state {
