@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import './App.css'
 
-const API_URL = 'http://localhost:8000/campaigns'
+const API_URL = 'https://campaign-analytics-internship-test.onrender.com/campaigns'
 
 function App() {
   const [campaigns, setCampaigns] = useState([])
